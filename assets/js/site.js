@@ -62,7 +62,7 @@
       }).catch(function () {
         btn.disabled = false;
         btn.innerHTML = label;
-        errorEl.textContent = "That didn't send. Please try again, or message us on LinkedIn and we'll pick it up there.";
+        errorEl.innerHTML = 'That didn’t send. Please try again, or <a href="https://www.linkedin.com/in/v-perera/">message us on LinkedIn</a> and we’ll pick it up there.';
         errorEl.hidden = false;
       });
     });
