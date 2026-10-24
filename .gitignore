@@ -2,6 +2,9 @@
 /Editorial Shopify CRO cover with client logos.png
 /Mode & metric wordmark.png
 /Origen_logo.png
+# Any loose image in the site root is source or social artwork, never site content
+/*.png
+/*.jpg
 /assets/images/Fashion Editorial Store Review Hero (1).png
 /assets/images/luluwoman-cart-after.jpg
 /assets/images/luluwoman-cart-before.jpg
