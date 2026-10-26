@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /insights/_template/
+
+Sitemap: https://modeandmetric.com/sitemap.xml

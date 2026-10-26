@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Public, indexable pages only (not thanks.html or the insights template). When an article is
+     published, add its URL with <lastmod> set to its dateModified. See insights/README.md. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://modeandmetric.com/</loc></url>
+  <url><loc>https://modeandmetric.com/work/luluwoman.html</loc></url>
+  <url><loc>https://modeandmetric.com/privacy.html</loc></url>
+  <!-- Insights: uncomment with the first article, then add one <url> per article.
+  <url><loc>https://modeandmetric.com/insights/</loc></url>
+  <url><loc>https://modeandmetric.com/insights/article-slug/</loc><lastmod>2026-10-26</lastmod></url>
+  -->
+</urlset>

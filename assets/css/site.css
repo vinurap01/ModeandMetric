@@ -563,6 +563,100 @@ a.wordmark { display: inline-block; line-height: 0; }
 .prose .meta { font-size: 15px; color: var(--stone); }
 .pending { color: var(--oxblood); font-weight: 600; } /* a detail still to be confirmed before launch */
 
+/* ---------- Insights (insights/) ----------
+   Editorial reading pages. An article is one centred reading column (~66 characters a line);
+   the featured image and .figure-wide images run wider than the text. The index and "More
+   insights" are a plain list of titles between hairlines, not cards. Every article uses the
+   markup in insights/_template/, so nothing here is styled per article. */
+.nav-links a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--oxblood); }
+.article { padding: var(--section-y-sm) 0; }
+.article-col { max-width: 700px; margin: 0 auto; }
+.article-kicker { font-size: 14px; font-weight: 600; }
+.article-kicker a { color: var(--oxblood); text-decoration: none; text-underline-offset: 5px; }
+.article-kicker a:hover { text-decoration: underline; }
+.article-head .display { margin-top: var(--s-3); font-size: clamp(40px, 5.4vw, 64px); line-height: 1.03; letter-spacing: -0.028em; }
+.article-dek {
+  margin-top: var(--s-3);
+  font-family: var(--font-display); font-variation-settings: "opsz" 36; font-weight: 400;
+  font-size: clamp(20px, 2.1vw, 24px); line-height: 1.42; color: var(--charcoal);
+}
+.article-meta {
+  display: flex; flex-wrap: wrap; gap: 4px var(--s-2);
+  margin-top: var(--s-4); padding-top: var(--s-2); border-top: 1px solid var(--line);
+  font-size: 14px; color: var(--stone);
+}
+.article-meta > * + *::before { content: "\00B7"; margin-right: var(--s-2); }
+.article-hero { max-width: var(--content); margin: var(--s-5) auto 0; }
+.article-hero img { width: 100%; aspect-ratio: var(--ar, 3 / 2); object-fit: cover; border-radius: var(--radius); }
+.article-hero figcaption, .article-body figcaption { margin-top: 12px; font-size: 14px; line-height: 1.45; color: var(--stone); }
+
+.article-body { margin-top: var(--s-5); font-size: 18px; line-height: 1.75; }
+.article-body > * + * { margin-top: 1.15em; }
+.article-body h2 {
+  margin-top: 2.2em; font-family: var(--font-display); font-variation-settings: "opsz" 36; font-weight: 400;
+  font-size: clamp(28px, 3vw, 34px); line-height: 1.15; letter-spacing: -0.012em; color: var(--ink);
+}
+.article-body h3 {
+  margin-top: 1.9em; font-family: var(--font-display); font-variation-settings: "opsz" 36; font-weight: 400;
+  font-size: 23px; line-height: 1.25; color: var(--ink);
+}
+.article-body :is(h2, h3) + * { margin-top: .6em; }
+.article-body p { text-wrap: pretty; }
+.article-body :is(ul, ol) { padding-left: 1.25em; }
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li + li { margin-top: .45em; }
+.article-body li::marker { color: var(--oxblood); font-variant-numeric: lining-nums; }
+.article-body :is(b, strong) { color: var(--ink); font-weight: 600; }
+.article-body a {
+  color: var(--ink); text-decoration: underline; text-decoration-color: var(--oxblood);
+  text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.article-body a:hover { text-decoration-thickness: 2px; }
+.article-body blockquote { margin-block: 2em; padding-left: var(--s-3); border-left: 2px solid var(--oxblood); }
+.article-body blockquote p {
+  font-family: var(--font-display); font-variation-settings: "opsz" 36; font-weight: 300;
+  font-size: clamp(23px, 2.5vw, 28px); line-height: 1.38; letter-spacing: -0.01em; color: var(--ink);
+}
+.article-body blockquote footer { margin-top: 12px; font-size: 14px; color: var(--stone); }
+.article-body figure { margin-block: 2.2em; }
+.article-body figure img { width: 100%; border-radius: var(--radius); }
+.article-body figure .shot img { border-radius: 0; }
+/* Wider than the text, centred on it, never past the page gutters */
+.article-body .figure-wide { margin-inline: calc((min(960px, 100vw - 2 * var(--gutter)) - 100%) / -2); }
+.article-related { padding-block: 14px; border-block: 1px solid var(--line); font-size: 15px; line-height: 1.5; color: var(--stone); }
+.article-related a { font-weight: 600; text-decoration-color: var(--line); }
+.article-related a:hover { text-decoration-color: var(--oxblood); }
+
+/* Closing CTA: the brand's short oxblood rule, one line of copy, one button */
+.article-cta { margin-top: var(--s-5); }
+.article-cta::before { content: ""; display: block; width: 48px; height: 2px; margin-bottom: var(--s-3); background: var(--oxblood); }
+.article-cta h2 { font-family: var(--font-display); font-variation-settings: "opsz" 36; font-weight: 400; font-size: clamp(26px, 2.8vw, 32px); line-height: 1.15; color: var(--ink); }
+.article-cta p { margin-top: 12px; max-width: 52ch; color: var(--stone); }
+.article-cta .btn { margin-top: var(--s-3); }
+
+/* Article index: date, then the title and one line, between hairlines */
+.insight-list { border-top: 1px solid var(--line); }
+.insight-list li { border-bottom: 1px solid var(--line); }
+.insight-link { display: grid; grid-template-columns: 180px minmax(0, 1fr); align-items: baseline; gap: 6px var(--s-4); padding: var(--s-4) 0; text-decoration: none; }
+.insight-link time { font-size: 14px; color: var(--stone); }
+.insight-title {
+  font-family: var(--font-display); font-variation-settings: "opsz" 36; font-weight: 400;
+  font-size: clamp(26px, 2.8vw, 34px); line-height: 1.15; letter-spacing: -0.012em; color: var(--ink);
+  transition: color .2s ease;
+}
+.insight-desc { margin-top: 10px; max-width: 60ch; font-size: 16px; line-height: 1.6; color: var(--stone); text-wrap: pretty; }
+.insight-link:hover .insight-title { color: var(--oxblood); }
+.insight-link:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; }
+.insights-index .insight-list { margin-top: var(--s-5); }
+.more-insights { padding: var(--section-y-sm) 0; border-top: 1px solid var(--line); }
+.more-insights .h-sub { margin-bottom: var(--s-4); }
+@media (max-width: 760px) {
+  .insight-link { grid-template-columns: minmax(0, 1fr); padding: var(--s-3) 0; }
+  .article-body { font-size: 17px; line-height: 1.7; }
+  .article-body blockquote { padding-left: var(--s-2); }
+}
+
 /* ---------- Footer ---------- */
 .footer { padding: var(--s-5) 0 var(--s-4); border-top: 1px solid var(--line); font-size: 15px; color: var(--stone); }
 .footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-4); }
