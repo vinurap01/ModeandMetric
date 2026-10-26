@@ -304,9 +304,9 @@ a.wordmark { display: inline-block; line-height: 0; }
 
 /* ---------- How it works ----------
    Built to Vin's editorial mockup (21 Oct): oversized two-line heading under a short oxblood
-   rule, intro below; on the right, four step rows with large oxblood numerals on a fine
+   rule, intro below; on the right, five step rows with large oxblood numerals on a fine
    timeline (oxblood dots where rows meet), a hairline divider before each step's text, and a
-   faint tonal surface behind steps 01 and 03. A faint oversized italic numeral sits behind the
+   faint tonal surface behind the odd steps. A faint oversized italic numeral sits behind the
    left column on desktop and follows the step being read. Both use the tint token.
    Scroll progress (site.js adds .is-tracking): the timeline fills in oxblood as you read,
    upcoming numerals sit at low opacity, and the step being read gets an oxblood divider.
@@ -325,6 +325,7 @@ a.wordmark { display: inline-block; line-height: 0; }
 .how-section[data-step="2"]::before { content: "02"; content: "02" / ""; }
 .how-section[data-step="3"]::before { content: "03"; content: "03" / ""; }
 .how-section[data-step="4"]::before { content: "04"; content: "04" / ""; }
+.how-section[data-step="5"]::before { content: "05"; content: "05" / ""; }
 @media (min-width: 901px) {
   .how-section .split { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); } /* steps get ~60%, as in the mockup */
 }
@@ -361,7 +362,7 @@ a.wordmark { display: inline-block; line-height: 0; }
   font-family: var(--font-display); font-variation-settings: "opsz" 36; font-weight: 400;
   font-size: var(--title); line-height: 1.2; letter-spacing: -0.01em; color: var(--ink);
 }
-.steps p { margin-top: 6px; max-width: 46ch; font-size: var(--desc); line-height: 1.6; color: var(--stone); }
+.steps p { margin-top: 6px; max-width: 46ch; font-size: var(--desc); line-height: 1.6; color: var(--stone); text-wrap: pretty; }
 .steps.is-tracking li:not(:last-child)::before {
   background: linear-gradient(var(--oxblood), var(--oxblood)) top / 100% calc(var(--fill, 0) * 100%) no-repeat, var(--line);
 }
@@ -618,7 +619,7 @@ a.wordmark { display: inline-block; line-height: 0; }
 
   .pricing-head { flex-direction: column; align-items: flex-start; }
   .pricing-head .lede { margin-top: 0; }
-  /* Phones: one compact column. The free offer puts "Free" on its title row; the paid
+  /* Phones: one compact column. The free offer puts "$0" on its title row; the paid
      offer keeps its larger price as the one big number. */
   .pricing-head { gap: var(--s-2); }
   .offers { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: var(--s-2); }
